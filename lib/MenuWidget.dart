@@ -16,22 +16,13 @@ class StockWidget extends StatelessWidget {
         backgroundColor: Colors.amberAccent,
       ),
       body: ListView.builder(
+          padding: EdgeInsets.only(top: 8.0),
           itemCount: products.length,
           itemBuilder: (BuildContext context, int index) {
+
             return ProductWidget(product: products[index]);
           }),
 
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.call),
-          label: 'Calls',
-        ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.smart_button),
-              label: 'Camera',
-            ),
-      ]),
     );
   }
 }
