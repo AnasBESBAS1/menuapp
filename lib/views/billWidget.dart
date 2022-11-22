@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'data/products.dart';
+import '../data/products.dart';
 
 class BillWidget extends StatelessWidget {
   const BillWidget({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:menu_app/repository/menu_repository.dart';
-import 'package:menu_app/billWidget.dart';
-import 'MenuWidget.dart';
+import 'package:menu_app/views/billWidget.dart';
+import 'views/MenuWidget.dart';
 
 void main() {
   GetIt.instance.registerSingleton<MenuRepository>(MenuRepositoryDummyImpl());
