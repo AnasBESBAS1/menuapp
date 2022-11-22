@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../data/products.dart';
 import 'package:get_it/get_it.dart';
 import 'package:menu_app/repository/menu_repository.dart';
 import 'package:menu_app/views/ProductWidget.dart';
+import 'package:menu_app/views/FooterWidget.dart';
 
-class StockWidget extends StatelessWidget {
-  const StockWidget({Key? key}) : super(key: key);
+
+class MenuWidget extends StatelessWidget {
+  const MenuWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +16,14 @@ class StockWidget extends StatelessWidget {
         title: const Text(" Menu "),
         backgroundColor: Colors.amberAccent,
       ),
-      body: ListView.builder(
-          padding: EdgeInsets.only(top: 8.0),
-          itemCount: products.length,
-          itemBuilder: (BuildContext context, int index) {
+      body:
 
+      ListView.builder(
+          itemCount: products.length+1,
+          itemBuilder: (BuildContext context, int index) {
+            if (index == products.length){
+              return const FooterWidget();
+            }
             return ProductWidget(product: products[index]);
           }),
 
