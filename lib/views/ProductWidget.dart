@@ -31,7 +31,7 @@ class ProductWidget extends StatelessWidget {
                     child: Text(
                       product.category,
                       style: const TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 25.0,
                         fontFamily: 'Roboto',
                         color: Color(0xFF212121),
                         fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class ProductWidget extends StatelessWidget {
                   child: Text(
                     product.name,
                     style: const TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 20.0,
                       fontFamily: 'Roboto',
                       color: Color(0xFF212121),
                       fontWeight: FontWeight.normal,
@@ -64,7 +64,7 @@ class ProductWidget extends StatelessWidget {
                   child: Text(
                     "${product.price}",
                     style: const TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 20.0,
                       fontFamily: 'Roboto',
                       color: Color(0xFF212121),
                       fontWeight: FontWeight.normal,

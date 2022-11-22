@@ -6,9 +6,22 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(10, 32, 10, 0),
+        child: Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 150, 10, 0),
+          child: const Text(
+            "Total amount ",
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Roboto',
+              color: Color(0xFF212121),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(40),
@@ -23,7 +36,9 @@ class FooterWidget extends StatelessWidget {
               style: TextStyle(fontSize: 20),
             ),
           ),
-        ));
+        )
+      ],
+    ));
   }
 
   setState(Null Function() param0) {}
