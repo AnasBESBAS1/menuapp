@@ -12,6 +12,7 @@ class MyStatefulWidget extends StatefulWidget {
 /// private State class that goes with MyStatefulWidget
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool isChecked = false;
+  double sum = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     onChanged: (bool? value) {
                       setState(() {
                         isChecked = value!;
+                        this.sum += widget.product.price;
                       });
                     },
                   ))),
