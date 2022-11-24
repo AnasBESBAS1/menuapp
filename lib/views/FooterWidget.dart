@@ -6,12 +6,14 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
+        alignment: Alignment.center,
         child: Column(
       children: [
         Container(
-          padding: const EdgeInsets.fromLTRB(10, 150, 10, 0),
+          padding: const EdgeInsets.fromLTRB(10, 70, 260, 0),
           child: const Text(
             "Total amount ",
+            textAlign: TextAlign.left,
             style: TextStyle(
               fontSize: 20.0,
               fontFamily: 'Roboto',
@@ -40,6 +42,5 @@ class FooterWidget extends StatelessWidget {
       ],
     ));
   }
-
   setState(Null Function() param0) {}
 }

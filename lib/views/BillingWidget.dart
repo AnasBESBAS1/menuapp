@@ -10,16 +10,21 @@ class BillWidget extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text(" Menu "),
-          backgroundColor: Colors.amberAccent,
+          backgroundColor: Colors.blue,
         ),
         body: Center(
           child: Column(
             children: <Widget>[
               Image.asset('assets/images/restaurant.png',
-                  height: 400, width: 250),
+                  height: 500, width: 350),
               const Text(
                 "Total amount is : ",
-                style: TextStyle(fontSize: 20.0),
+                  style:  TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Roboto',
+                    color: Color(0xFF212121),
+                    fontWeight: FontWeight.bold,
+                  ),
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

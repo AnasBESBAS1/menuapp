@@ -5,6 +5,7 @@ import 'package:menu_app/views/ProductWidget.dart';
 import 'package:menu_app/views/FooterWidget.dart';
 
 
+
 class MenuWidget extends StatelessWidget {
   const MenuWidget({Key? key}) : super(key: key);
 
@@ -14,7 +15,7 @@ class MenuWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(" Menu "),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.blue,
       ),
       body:
 
@@ -22,9 +23,9 @@ class MenuWidget extends StatelessWidget {
           itemCount: products.length+1,
           itemBuilder: (BuildContext context, int index) {
             if (index == products.length){
-              return const FooterWidget();
+              return  const FooterWidget();
             }
-            return ProductWidget(product: products[index]);
+            return MyStatefulWidget(product: products[index]);
           }),
 
     );

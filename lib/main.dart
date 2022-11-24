@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:menu_app/repository/menu_repository.dart';
-import 'package:menu_app/views/billWidget.dart';
+import 'package:menu_app/views/BillingWidget.dart';
 import 'views/MenuWidget.dart';
 
 void main() {
@@ -10,6 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   @override
