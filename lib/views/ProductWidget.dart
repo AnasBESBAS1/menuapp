@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:menu_app/data/addition.dart';
 import '../data/products.dart';
 
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key, required this.product}) : super(key: key);
+  const MyStatefulWidget(
+      {Key? key, required this.product, required this.addition})
+      : super(key: key);
   final Product product;
+  final Addition addition;
 
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
@@ -64,14 +68,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         fontSize: 20.0,
                         fontFamily: 'Roboto',
                         color: Color(0xFF212121),
-                        fontWeight: FontWeight.normal,
+                        fontWeight: FontWeight.w100,
                       ),
                     ),
                     value: isChecked,
                     onChanged: (bool? value) {
                       setState(() {
                         isChecked = value!;
-                        this.sum += widget.product.price;
+                        if (isChecked) {
+                          widget.addition.addition += widget.product.price;
+                        } else {
+                          widget.addition.addition -= widget.product.price;
+                        }
+                        print(widget.addition.addition);
                       });
                     },
                   ))),

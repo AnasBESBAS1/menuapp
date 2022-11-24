@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import '../data/products.dart';
+import '../data/addition.dart';
 import 'package:flutter/services.dart';
 
 class BillWidget extends StatelessWidget {
-  const BillWidget({super.key});
+  BillWidget({super.key, required this.addition});
+
+  Addition addition;
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +14,41 @@ class BillWidget extends StatelessWidget {
           title: const Text(" Menu "),
           backgroundColor: Colors.blue,
         ),
-        body: Center(
+
+        body: Padding(
+          padding : const EdgeInsets .all (20.0) ,
           child: Column(
             children: <Widget>[
               Image.asset('assets/images/restaurant.png',
-                  height: 500, width: 350),
-              const Text(
-                "Total amount is : ",
-                  style:  TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Roboto',
-                    color: Color(0xFF212121),
-                    fontWeight: FontWeight.bold,
-                  ),
+                  height: 500, width: 500),
+              Row(
+                children:  [
+                   Container(
+                       padding: const EdgeInsets.only(left: 16),
+                       child: Text(
+                    "Total amount is :",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Roboto',
+                      color: Color(0xFF212121),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
+                  const SizedBox ( width : 140) ,
+                  Expanded(
+                      child:  Text(
+                        "${addition.addition}",
+                        style: const TextStyle(
+                          fontSize: 20.0,
+                          fontFamily: 'Roboto',
+                          color: Color(0xFF212121),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                  const SizedBox ( width : 16) ,
+                ],
               ),
+
               Container(
                 padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                 child: ElevatedButton(
@@ -33,8 +56,9 @@ class BillWidget extends StatelessWidget {
                     minimumSize: const Size.fromHeight(40),
                   ),
                   onPressed: () async {
-                    await Clipboard.setData(ClipboardData(text: "Hi jawjaw"))
-                    .then((result) {
+                    await Clipboard.setData(ClipboardData(
+                            text: "Total amount is : ${addition.addition}"))
+                        .then((result) {
                       final snackBar = SnackBar(
                         content: Text('Copied to Clipboard'),
                         action: SnackBarAction(
@@ -45,7 +69,6 @@ class BillWidget extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     });
                   },
-
                   child: const Text(
                     'Copy to Clipboard',
                     style: TextStyle(fontSize: 20),
